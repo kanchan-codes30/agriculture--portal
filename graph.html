@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Graph</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<h2 style="text-align:center;">📊 Crop Analysis</h2>
+
+<canvas id="chart"></canvas>
+
+<script>
+new Chart(document.getElementById("chart"), {
+    type: 'bar',
+    data: {
+        labels: ["Rice","Wheat","Maize"],
+        datasets: [{
+            label: "Yield %",
+            data: [40, 60, 50]
+        }]
+    }
+});
+</script>
+
+</body>
+</html>

@@ -2,14 +2,18 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 import joblib
 
+# 📊 Load Dataset
 data = pd.read_csv("crop_dataset.csv")
 
-X = data[['N','P','K','temperature','humidity','ph','rainfall']]
-y = data['label']
+# 🧹 Features & Target
+X = data.drop("crop", axis=1)
+y = data["crop"]
 
+# 🤖 Model Train
 model = RandomForestClassifier()
-model.fit(X,y)
+model.fit(X, y)
 
-joblib.dump(model, "crop_model.pkl")
+# 💾 Save Model
+joblib.dump(model, "model.pkl")
 
-print("Model trained successfully!")
+print("Model Ready ✔")
